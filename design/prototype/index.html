@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOLTCORE — Electronic Components & Spare Parts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <button class="icon-btn" aria-label="Menu">&#9776;</button>
+      <a href="index.html" class="logo">VOLT<span>CORE</span></a>
+      <div class="search-bar">
+        <span class="icon">&#128269;</span>
+        <input type="text" placeholder="Search by part number, name, or category..." aria-label="Search">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">&#128269;</button>
+        <a href="#" class="icon-btn" aria-label="Account">&#128100;</a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">&#128717;<span class="cart-count">3</span></a>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="shop.html">Resistors</a>
+      <a href="shop.html">Capacitors</a>
+      <a href="shop.html">Connectors</a>
+      <a href="shop.html">Microcontrollers</a>
+      <a href="shop.html">Sensors</a>
+      <a href="shop.html">Switches</a>
+      <a href="shop.html">All Categories</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-search">
+  <div class="container">
+    <h1>Electronic Components & Spare Parts</h1>
+    <p>Millions of parts. Fast shipping. Datasheets included. Search by part number or browse by category.</p>
+    <div class="search-bar" style="max-width:640px;">
+      <span class="icon">&#128269;</span>
+      <input type="text" placeholder="e.g. ESP32-WROOM-32, 10k resistor, USB-C..." aria-label="Search">
+    </div>
+  </div>
+</section>
+
+<div class="cat-strip">
+  <div class="container">
+    <div class="inner">
+      <a class="cat-chip" href="shop.html">Resistors</a>
+      <a class="cat-chip" href="shop.html">Capacitors</a>
+      <a class="cat-chip" href="shop.html">Connectors</a>
+      <a class="cat-chip" href="shop.html">Switches</a>
+      <a class="cat-chip" href="shop.html">Sensors</a>
+      <a class="cat-chip" href="shop.html">Microcontrollers</a>
+      <a class="cat-chip" href="shop.html">LEDs</a>
+      <a class="cat-chip" href="shop.html">Cables</a>
+      <a class="cat-chip" href="shop.html">Enclosures</a>
+      <a class="cat-chip" href="shop.html">Fasteners</a>
+      <a class="cat-chip" href="shop.html">Fuses</a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Parts</h2>
+      <a href="shop.html" class="btn btn-ghost">View all &rarr;</a>
+    </div>
+    <div class="product-grid" data-product-grid="all"></div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why VOLTCORE</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);">
+      <div>
+        <div style="font-size:24px;margin-bottom:var(--sp-2);">&#9881;</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--fs-body);margin-bottom:var(--sp-1);">Millions of Parts</h3>
+        <p class="muted small">Resistors, caps, connectors, MCUs, sensors and more.</p>
+      </div>
+      <div>
+        <div style="font-size:24px;margin-bottom:var(--sp-2);">&#128202;</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--fs-body);margin-bottom:var(--sp-1);">Full Specs</h3>
+        <p class="muted small">Datasheets, dimensions, ratings on every part.</p>
+      </div>
+      <div>
+        <div style="font-size:24px;margin-bottom:var(--sp-2);">&#9889;</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--fs-body);margin-bottom:var(--sp-1);">Fast Shipping</h3>
+        <p class="muted small">Same-day dispatch on in-stock items.</p>
+      </div>
+      <div>
+        <div style="font-size:24px;margin-bottom:var(--sp-2);">&#128257;</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--fs-body);margin-bottom:var(--sp-1);">Bulk Pricing</h3>
+        <p class="muted small">Tiered pricing for volume orders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#F9FAFB;margin-bottom:var(--sp-3);">VOLT<span style="color:var(--color-accent);">CORE</span></div>
+        <p style="color:rgba(249,250,251,0.6);font-size:var(--fs-body-s);max-width:280px;">Electronic components and spare parts for makers, repair techs, and engineers.</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <a href="shop.html">Resistors</a><a href="shop.html">Capacitors</a><a href="shop.html">Connectors</a><a href="shop.html">Microcontrollers</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">Datasheets</a><a href="#">Compatibility</a><a href="#">Shipping</a><a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <a href="#">Sign In</a><a href="#">Orders</a><a href="#">Reorder</a><a href="#">Addresses</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Voltcore. All rights reserved.</span>
+      <span>Privacy &middot; Terms &middot; Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

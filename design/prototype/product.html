@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP32-WROOM-32 Module — VOLTCORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <button class="icon-btn" aria-label="Menu">&#9776;</button>
+      <a href="index.html" class="logo">VOLT<span>CORE</span></a>
+      <div class="search-bar">
+        <span class="icon">&#128269;</span>
+        <input type="text" placeholder="Search parts..." aria-label="Search">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">&#128269;</button>
+        <a href="#" class="icon-btn" aria-label="Account">&#128100;</a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">&#128717;<span class="cart-count">3</span></a>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="shop.html">Resistors</a><a href="shop.html">Capacitors</a><a href="shop.html">Connectors</a><a href="shop.html">Microcontrollers</a><a href="shop.html">Sensors</a><a href="shop.html">Switches</a><a href="shop.html">All Categories</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="shop.html">Microcontrollers</a><span>/</span>ESP32-WROOM-32</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="pdp">
+      <div class="pdp-gallery">
+        <div class="main"><span class="glyph"> ( </span></div>
+        <div class="thumbs">
+          <div class="active"></div><div></div><div></div><div></div>
+        </div>
+      </div>
+      <div class="pdp-info">
+        <div class="partno">ESP32-WROOM-32</div>
+        <h1>ESP32-WROOM-32 Wi-Fi + Bluetooth Module</h1>
+        <div class="price">$3.20</div>
+        <div class="stock-line" style="color:var(--color-state-success);">In stock · 260 available</div>
+        <p class="desc">Dual-core Wi-Fi + Bluetooth module with 4MB flash. Ideal for IoT, smart home, and wireless projects. Castellated edges for easy soldering onto carrier boards.</p>
+
+        <h3 style="margin-bottom:var(--sp-2);">Specifications</h3>
+        <table class="spec-table">
+          <tr><th>Part Number</th><td>ESP32-WROOM-32</td></tr>
+          <tr><th>MCU</th><td>ESP32 (Xtensa dual-core 240MHz)</td></tr>
+          <tr><th>Flash</th><td>4MB SPI Flash</td></tr>
+          <tr><th>Wireless</th><td>Wi-Fi 802.11 b/g/n, BT 4.2 BR/EDR + BLE</td></tr>
+          <tr><th>GPIO</th><td>34 programmable pins</td></tr>
+          <tr><th>Operating Voltage</th><td>3.0–3.6V</td></tr>
+          <tr><th>Package</th><td>Module 18×25.5mm, castellated</td></tr>
+          <tr><th>Operating Temp</th><td>-40°C to +85°C</td></tr>
+        </table>
+
+        <h3 style="margin-bottom:var(--sp-2);">Volume Pricing</h3>
+        <table class="tier-table">
+          <tr><th>Qty</th><th>1–9</th><th>10–99</th><th>100+</th></tr>
+          <tr><td>Price</td><td>$3.20</td><td>$2.85</td><td>$2.40</td></tr>
+        </table>
+
+        <div class="pdp-actions">
+          <div class="qty">
+            <button id="pdp-dec">-</button>
+            <span id="pdp-qty">1</span>
+            <button id="pdp-inc">+</button>
+          </div>
+          <button class="btn btn-primary" data-pdp-add="mcu1">Add to Cart</button>
+          <button class="btn btn-secondary" data-add="mcu1">&#128206; Datasheet</button>
+        </div>
+
+        <p class="small muted">Free shipping on orders over $25. Bulk discounts auto-applied at checkout.</p>
+
+        <h3 style="margin:var(--sp-5) 0 var(--sp-2);">Compatible With</h3>
+        <ul class="compat-list">
+          <li><span class="tag">DEV-KIT</span> ESP32 DevKitC (all variants)</li>
+          <li><span class="tag">BREAKOUT</span> ESP32 Breakout Board v2</li>
+          <li><span class="tag">CARRIER</span> Custom PCB with 18×25.5mm footprint</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-top:1px solid var(--color-border-subtle);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Related Parts</h2>
+    </div>
+    <div class="product-grid" data-product-grid="Microcontrollers"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom"><span>&copy; 2026 Voltcore.</span><span>Privacy &middot; Terms &middot; Cookies</span></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

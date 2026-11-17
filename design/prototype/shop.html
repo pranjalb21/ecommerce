@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Parts — VOLTCORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <button class="icon-btn" aria-label="Menu">&#9776;</button>
+      <a href="index.html" class="logo">VOLT<span>CORE</span></a>
+      <div class="search-bar">
+        <span class="icon">&#128269;</span>
+        <input type="text" placeholder="Search parts..." aria-label="Search">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">&#128269;</button>
+        <a href="#" class="icon-btn" aria-label="Account">&#128100;</a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">&#128717;<span class="cart-count">3</span></a>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="shop.html">Resistors</a><a href="shop.html">Capacitors</a><a href="shop.html">Connectors</a><a href="shop.html">Microcontrollers</a><a href="shop.html">Sensors</a><a href="shop.html">Switches</a><a href="shop.html">All Categories</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="index.html">Home</a><span>/</span>All Parts</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="plp-layout">
+      <aside class="filters">
+        <h3>Category</h3>
+        <label><input type="checkbox" checked> Resistors</label>
+        <label><input type="checkbox" checked> Capacitors</label>
+        <label><input type="checkbox"> Connectors</label>
+        <label><input type="checkbox"> Switches</label>
+        <label><input type="checkbox"> Sensors</label>
+        <label><input type="checkbox"> Microcontrollers</label>
+        <label><input type="checkbox"> LEDs</label>
+        <label><input type="checkbox"> Cables</label>
+        <h3>Stock Status</h3>
+        <label><input type="checkbox" checked> In stock</label>
+        <label><input type="checkbox"> Low stock</label>
+        <label><input type="checkbox"> Out of stock</label>
+        <h3>Price (USD)</h3>
+        <input type="range" class="range" min="0" max="10" step="0.5" value="10">
+        <div class="small muted" style="margin-top:var(--sp-1);">Up to $10.00</div>
+        <h3>Package</h3>
+        <label><input type="checkbox"> Through-hole</label>
+        <label><input type="checkbox"> SMD</label>
+        <label><input type="checkbox"> Module</label>
+      </aside>
+      <div>
+        <div class="plp-toolbar">
+          <span class="small muted">Showing <strong>16</strong> of 1,240 parts</span>
+          <div style="display:flex;gap:var(--sp-2);align-items:center;">
+            <select style="padding:6px 10px;border:1px solid var(--color-border-strong);border-radius:var(--radius-sm);font-size:var(--fs-body-s);background:#fff;">
+              <option>Sort: Relevance</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Part Number</option>
+              <option>Newest</option>
+            </select>
+            <div class="view-toggle">
+              <button class="active" id="grid-view">Grid</button>
+              <button id="list-view">List</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-grid" data-product-grid="all" id="grid-container"></div>
+        <div id="list-container" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom"><span>&copy; 2026 Voltcore.</span><span>Privacy &middot; Terms &middot; Cookies</span></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  // List view toggle
+  document.addEventListener('DOMContentLoaded', function(){
+    const gridBtn = document.getElementById('grid-view');
+    const listBtn = document.getElementById('list-view');
+    const grid = document.getElementById('grid-container');
+    const list = document.getElementById('list-container');
+    function toList(){
+      grid.style.display='none'; list.style.display='block';
+      gridBtn.classList.remove('active'); listBtn.classList.add('active');
+      if (!list.innerHTML.trim()){
+        const products = window.Volt.PRODUCTS;
+        list.innerHTML = products.map(p=>{
+          const stockColor = p.stock==='in'?'var(--color-state-success)':p.stock==='low'?'var(--color-state-warning)':'var(--color-state-error)';
+          const stockText = p.stock==='in'?'In stock':p.stock==='low'?'Low stock':'Out of stock';
+          return `<div class="product-row">
+            <div class="img"><span class="glyph">${p.glyph}</span></div>
+            <div>
+              <div class="partno">${p.partno}</div>
+              <div class="name">${p.name}</div>
+              <div class="specs">${p.specs}</div>
+            </div>
+            <div class="stock" style="color:${stockColor};">${stockText}<br><span class="muted">${p.qty} avail</span></div>
+            <div class="price">$${p.price.toFixed(2)}<br><button class="btn btn-primary btn-sm" data-add="${p.id}" style="margin-top:var(--sp-1);">Add</button></div>
+          </div>`;
+        }).join('');
+        window.Volt && window.Volt.addToCart;
+      }
+    }
+    function toGrid(){
+      grid.style.display='grid'; list.style.display='none';
+      listBtn.classList.remove('active'); gridBtn.classList.add('active');
+    }
+    gridBtn.addEventListener('click', toGrid);
+    listBtn.addEventListener('click', toList);
+  });
+</script>
+</body>
+</html>
