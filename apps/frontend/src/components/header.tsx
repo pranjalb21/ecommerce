@@ -7,7 +7,7 @@ const optionItems = [
   { name: "Cart", href: "/cart", component: <ShoppingCart /> },
 ];
 
-function Navbar() {
+function Header() {
   return (
     <header>
       <nav className="flex justify-around border-b border-border bg-background text-foreground shadow-sm">
@@ -22,4 +22,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;

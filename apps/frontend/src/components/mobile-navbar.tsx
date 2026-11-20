@@ -11,12 +11,14 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { Button } from "./ui/button";
+import { getCopyrightYear } from "./copyright-year";
 
-function MobileNavbar({
+async function MobileNavbar({
   optionItems,
 }: {
   optionItems: { name: string; href: string; component: React.ReactNode }[];
 }) {
+  const year = await getCopyrightYear();
   return (
     <div className="flex justify-around w-full items-center">
       <h1 className="sm:text-xl font-bold">
@@ -53,7 +55,7 @@ function MobileNavbar({
           </ul>
           <SheetFooter>
             <p className="italic text-sm">
-              My App &copy; {new Date().getFullYear()}
+              My App &copy; {year}
             </p>
           </SheetFooter>
         </SheetContent>

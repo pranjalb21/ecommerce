@@ -10,6 +10,7 @@ function NavSearch() {
   return (
     <div className="group/search flex items-center relative min-w-0 w-full max-w-sm flex-1">
       <form className="flex items-center w-full">
+        <label htmlFor="search" className="hidden">Search Products</label>
         <Input
           name="search"
           placeholder="Search..."
